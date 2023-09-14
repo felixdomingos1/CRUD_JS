@@ -121,7 +121,7 @@ tbody tr td.acao {
   text-align: center;
 }
 
-/* @media (max-width: 700px) {
+@media (max-width: 700px) {
   body {
     font-size: 10px;
   }
@@ -154,7 +154,7 @@ tbody tr td.acao {
   .modal label {
     font-size: 12px!important;
   }
-} */
+}
 
 /* .modal-container {
   width: 100vw;
