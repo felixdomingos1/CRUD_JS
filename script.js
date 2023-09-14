@@ -1,9 +1,9 @@
-// const modal = document.querySelector('.modal-container')
-// const tbody = document.querySelector('tbody')
-// const sNome = document.querySelector('#m-nome')
-// const sFuncao = document.querySelector('#m-funcao')
-// const sSalario = document.querySelector('#m-salario')
-// const btnSalvar = document.querySelector('#btnSalvar')
+const modal = document.querySelector('.modal-container')
+const tbody = document.querySelector('tbody')
+const FNome = document.querySelector('#m-nome')
+const FFuncao = document.querySelector('#m-funcao')
+const FSalario = document.querySelector('#m-salario')
+const btnSalvar = document.querySelector('#btnSalvar')
 
 // let itens
 // let id
@@ -16,14 +16,14 @@
 //     }
 //   }
 //   if (edit) {
-//     sNome.value = itens[index].nome
-//     sFuncao.value = itens[index].funcao
-//     sSalario.value = itens[index].salario
+//     FNome.value = itens[index].nome
+//     FFuncao.value = itens[index].funcao
+//     FSalario.value = itens[index].salario
 //     id = index
 //   } else {
-//     sNome.value = ''
-//     sFuncao.value = ''
-//     sSalario.value = ''
+//     FNome.value = ''
+//     FFuncao.value = ''
+//     FSalario.value = ''
 //   } 
 // }
 
@@ -56,18 +56,18 @@
 
 // btnSalvar.onclick = e => {
   
-//   if (sNome.value == '' || sFuncao.value == '' || sSalario.value == '') {
+//   if (FNome.value == '' || FFuncao.value == '' || FSalario.value == '') {
 //     return 
 //   }
 
 //   e.preventDefault();
 
 //   if (id !== undefined) {
-//     itens[id].nome = sNome.value
-//     itens[id].funcao = sFuncao.value
-//     itens[id].salario = sSalario.value
+//     itens[id].nome = FNome.value
+//     itens[id].funcao = FFuncao.value
+//     itens[id].salario = FSalario.value
 //   } else {
-//     itens.push({'nome': sNome.value, 'funcao': sFuncao.value, 'salario': sSalario.value})
+//     itens.push({'nome': FNome.value, 'funcao': FFuncao.value, 'salario': FSalario.value})
 //   }
 
 //   setItensBD()
