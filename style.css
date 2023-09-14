@@ -208,14 +208,14 @@ tbody tr td.acao {
   color: white;
   font-weight: 600;
 }
-/* 
+
 .active {
   display: flex;
-} */
-/* 
+}
+
 .active .modal {
   animation: modal .4s;
-} */
+}
 /* 
 @keyframes modal {
   from {
