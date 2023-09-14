@@ -52,18 +52,18 @@ button {
   background-color: rgb(6, 138, 46);
   transition: .5s all ease-in-out;
 }
-/* #new:hover{
+#new:hover{
   border: 1px solid rgb(14, 7, 75);
   background: transparent;
   color: rgb(14, 7, 75);
-} */
-/* 
+}
+
 .divTable {
   padding: 10px;
   width: auto; 
   height:inherit; 
   overflow:auto;
-} */
+}
 /* 
 .divTable::-webkit-scrollbar {
   width: 12px;
