@@ -16,16 +16,16 @@ body {
   background: rgb(41, 35, 87);
 }
 
-/* button {
+button {
   cursor: pointer;
-} */
-/* 
+}
+
 .container {
   width: 90%;
   padding: 2rem;
   border-radius: 10px;
   background: rgb(245, 242, 242);
-} */
+}
 
 /* .header {
   min-height: 70px;
