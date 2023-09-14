@@ -178,13 +178,13 @@ tbody tr td.acao {
   border-radius: 10px;
   width: 50%;
 }
-/* 
+
 .modal label {
   font-size: 14px;
   width: 100%;
-} */
+}
 
-/* .modal input {
+.modal input {
   width: 100%;
   outline: none;
   padding: 5px 10px; 
@@ -193,9 +193,9 @@ tbody tr td.acao {
   border-top: none;
   border-left: none;
   border-right: none;
-} */
+}
 
-/* .modal button {
+.modal button {
   width: 100%;
   margin: 10px auto;
   outline: none;
@@ -207,7 +207,7 @@ tbody tr td.acao {
   background-color:  rgb(6, 138, 46);
   color: white;
   font-weight: 600;
-} */
+}
 /* 
 .active {
   display: flex;
