@@ -54,37 +54,37 @@ function insertItem(item, index) {
   tbody.appendChild(tr)
 }
 
-// btnSalvar.onclick = e => {
+btnSalvar.onclick = e => {
   
-//   if (FNome.value == '' || FFuncao.value == '' || FSalario.value == '') {
-//     return 
-//   }
+  if (FNome.value == '' || FFuncao.value == '' || FSalario.value == '') {
+    return 
+  }
 
-//   e.preventDefault();
+  e.preventDefault();
 
-//   if (id !== undefined) {
-//     itens[id].nome = FNome.value
-//     itens[id].funcao = FFuncao.value
-//     itens[id].salario = FSalario.value
-//   } else {
-//     itens.push({'nome': FNome.value, 'funcao': FFuncao.value, 'salario': FSalario.value})
-//   }
+  if (id !== undefined) {
+    itens[id].nome = FNome.value
+    itens[id].funcao = FFuncao.value
+    itens[id].salario = FSalario.value
+  } else {
+    itens.push({'nome': FNome.value, 'funcao': FFuncao.value, 'salario': FSalario.value})
+  }
 
-//   setItensBD()
+  setItensBD()
 
-//   modal.classList.remove('active')
-//   loadItens()
-//   id = undefined
-// }
+  modal.classList.remove('active')
+  loadItens()
+  id = undefined
+}
 
-// function loadItens() {
-//   itens = getItensBD()
-//   tbody.innerHTML = ''
-//   itens.forEach((item, index) => {
-//     insertItem(item, index)
-//   })
+function loadItens() {
+  itens = getItensBD()
+  tbody.innerHTML = ''
+  itens.forEach((item, index) => {
+    insertItem(item, index)
+  })
 
-// }
+}
 
 // const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 // const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
