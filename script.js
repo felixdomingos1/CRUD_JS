@@ -87,7 +87,7 @@ function loadItens() {
 }
 
 const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
-// const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
+const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 // loadItens()
 
