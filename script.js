@@ -31,11 +31,11 @@ function editItem(index) {
   openModal(true, index)
 }
 
-// function deleteItem(index) {
-//   itens.splice(index, 1)
-//   setItensBD()
-//   loadItens()
-// }
+function deleteItem(index) {
+  itens.splice(index, 1)
+  setItensBD()
+  loadItens()
+}
 
 // function insertItem(item, index) {
 //   let tr = document.createElement('tr')
