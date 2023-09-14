@@ -228,16 +228,16 @@ tbody tr td.acao {
   }
 }
 
-/* td button {
+td button {
   border: none;
   outline: none;
   background: transparent;
-} */
+}
 
-/* td button i {
+td button i {
   font-size: 25px;
-} */
+}
 
-/* td button i:first-child {
+td button i:first-child {
   margin-right: 10px;
-} */
+}
