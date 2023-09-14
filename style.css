@@ -64,13 +64,13 @@ button {
   height:inherit; 
   overflow:auto;
 }
-/* 
+
 .divTable::-webkit-scrollbar {
   width: 12px;
   background-color: whitesmoke; 
-} */
+}
 
-/* .divTable::-webkit-scrollbar-thumb {
+.divTable::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: darkgray; 
 }
@@ -79,14 +79,14 @@ button {
 }
 .bx-edit{
   color: rgb(14, 7, 75);
-} */
+}
 
-/* table {
+table {
   width: 100%;
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
-} */
+}
 /* 
 thead {
   background-color: whitesmoke;
