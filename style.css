@@ -27,13 +27,13 @@ button {
   background: rgb(245, 242, 242);
 }
 
-/* .header {
+.header {
   min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: auto 12px;
-} */
+}
 
 /* .header span {
   font-weight: 900;
