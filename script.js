@@ -5,27 +5,27 @@ const FFuncao = document.querySelector('#m-funcao')
 const FSalario = document.querySelector('#m-salario')
 const btnSalvar = document.querySelector('#btnSalvar')
 
-// let itens
-// let id
+let itens
+let id
 
-// function openModal(edit = false, index = 0) {
-//   modal.classList.add('active')
-//   modal.onclick = e => {
-//     if (e.target.className.indexOf('modal-container') !== -1) {
-//       modal.classList.remove('active')
-//     }
-//   }
-//   if (edit) {
-//     FNome.value = itens[index].nome
-//     FFuncao.value = itens[index].funcao
-//     FSalario.value = itens[index].salario
-//     id = index
-//   } else {
-//     FNome.value = ''
-//     FFuncao.value = ''
-//     FSalario.value = ''
-//   } 
-// }
+function openModal(edit = false, index = 0) {
+  modal.classList.add('active')
+  modal.onclick = e => {
+    if (e.target.className.indexOf('modal-container') !== -1) {
+      modal.classList.remove('active')
+    }
+  }
+  if (edit) {
+    FNome.value = itens[index].nome
+    FFuncao.value = itens[index].funcao
+    FSalario.value = itens[index].salario
+    id = index
+  } else {
+    FNome.value = ''
+    FFuncao.value = ''
+    FSalario.value = ''
+  } 
+}
 
 // function editItem(index) {
 //   openModal(true, index)
