@@ -1,10 +1,11 @@
+/* Fonts Import */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
+/* Reset and Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -14,12 +15,15 @@ body {
   align-items: center;
   justify-content: center;
   background: rgb(238, 238, 238);
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Buttons */
 button {
   cursor: pointer;
 }
 
+/* Container */
 .container {
   width: 90%;
   padding: 2rem;
@@ -28,6 +32,7 @@ button {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.200);
 }
 
+/* Header */
 .header {
   min-height: 70px;
   display: flex;
@@ -43,6 +48,7 @@ button {
   word-break: break-all;
 }
 
+/* New Button */
 #new {
   font-size: 16px;
   font-weight: 600;
@@ -53,17 +59,19 @@ button {
   background-color: rgb(6, 138, 46);
   transition: .5s all ease-in-out;
 }
-#new:hover{
+
+#new:hover {
   border: 1px solid rgb(14, 7, 75);
   background: transparent;
   color: rgb(14, 7, 75);
 }
 
+/* Table */
 .divTable {
   padding: 10px;
   width: auto; 
-  height:inherit; 
-  overflow:auto;
+  height: inherit; 
+  overflow: auto;
 }
 
 .divTable::-webkit-scrollbar {
@@ -75,53 +83,17 @@ button {
   border-radius: 10px;
   background-color: darkgray; 
 }
-.bx-trash{
+
+/* Icons */
+.bx-trash {
   color: red;
 }
-.bx-edit{
+
+.bx-edit {
   color: rgb(14, 7, 75);
 }
 
-table {
-  width: 100%;
-  border-spacing: 10px;
-  word-break: break-all;
-  border-collapse: collapse;
-}
-
-thead {
-  background-color: whitesmoke;
-}
-
-tr {
-  border-bottom: 1px solid rgb(238, 235, 235)!important;
-}
-
-tbody tr td {
-  vertical-align: text-top;
-  padding: 6px;
-  max-width: 50px;
-}
-
-thead tr th {
-  padding: 5px;
-  text-align: start;
-  margin-bottom: 50px;
-}
-
-tbody tr {
-  margin-bottom: 50px;
-}
-
-thead tr th.acao {
-  width: 100px!important;
-  text-align: center;
-}
-
-tbody tr td.acao {
-  text-align: center;
-}
-
+/* Media Queries */
 @media (max-width: 700px) {
   body {
     font-size: 10px;
@@ -157,6 +129,7 @@ tbody tr td.acao {
   }
 }
 
+/* Modal Styles */
 .modal-container {
   width: 100vw;
   height: 100vh;
@@ -229,6 +202,7 @@ tbody tr td.acao {
   }
 }
 
+/* Table Buttons */
 td button {
   border: none;
   outline: none;
