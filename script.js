@@ -1,30 +1,31 @@
-const modal = document.querySelector('.modal-container')
-const tbody = document.querySelector('tbody')
-const FNome = document.querySelector('#m-nome')
-const FFuncao = document.querySelector('#m-funcao')
-const FSalario = document.querySelector('#m-salario')
-const btnSalvar = document.querySelector('#btnSalvar')
+const modalElement = document.querySelector('.modal-container')
+const tableBody = document.querySelector('tbody')
+const inputName = document.querySelector('#m-nome')
+const inputFunction = document.querySelector('#m-funcao')
+const inputSalary = document.querySelector('#m-salario')
+const btnSave = document.querySelector('#btnSalvar')
 
-let itens
-let id
+let itemsList
+let itemId
 
-function openModal(edit = false, index = 0) {
-  modal.classList.add('active')
-  modal.onclick = e => {
-    if (e.target.className.indexOf('modal-container') !== -1) {
-      modal.classList.remove('active')
+function openModal(editMode = false, index = 0) {
+  modalElement.classList.add('active')
+  modalElement.onclick = event => {
+    if (event.target.className.includes('modal-container')) {
+      modalElement.classList.remove('active')
     }
   }
-  if (edit) {
-    FNome.value = itens[index].nome
-    FFuncao.value = itens[index].funcao
-    FSalario.value = itens[index].salario
-    id = index
+  if (editMode) {
+    const { nome, funcao, salario } = itemsList[index]
+    inputName.value = nome
+    inputFunction.value = funcao
+    inputSalary.value = salario
+    itemId = index
   } else {
-    FNome.value = ''
-    FFuncao.value = ''
-    FSalario.value = ''
-  } 
+    inputName.value = ''
+    inputFunction.value = ''
+    inputSalary.value = ''
+  }
 }
 
 function editItem(index) {
@@ -32,61 +33,73 @@ function editItem(index) {
 }
 
 function deleteItem(index) {
-  itens.splice(index, 1)
-  setItensBD()
-  loadItens()
+  itemsList.splice(index, 1)
+  updateItemList()
+  loadItems()
 }
 
-function insertItem(item, index) {
-  let tr = document.createElement('tr')
+function createTableRow(item, index) {
+  const tableRow = document.createElement('tr')
 
-  tr.innerHTML = `
+  tableRow.innerHTML = `
     <td>${item.nome}</td>
     <td>${item.funcao}</td>
     <td>R$ ${item.salario}</td>
-    <td class="acao">
-      <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
+    <td class="action">
+      <button data-index="${index}" class="edit-button"><i class='bx bx-edit' ></i></button>
     </td>
-    <td class="acao">
-      <button onclick="deleteItem(${index})"><i class='bx bx-trash'></i></button>
+    <td class="action">
+      <button data-index="${index}" class="delete-button"><i class='bx bx-trash'></i></button>
     </td>
   `
-  tbody.appendChild(tr)
+  tableBody.appendChild(tableRow)
 }
 
-btnSalvar.onclick = e => {
-  
-  if (FNome.value == '' || FFuncao.value == '' || FSalario.value == '') {
+btnSave.onclick = event => {
+  if (inputName.value === '' || inputFunction.value === '' || inputSalary.value === '') {
     return 
   }
 
-  e.preventDefault();
+  event.preventDefault()
 
-  if (id !== undefined) {
-    itens[id].nome = FNome.value
-    itens[id].funcao = FFuncao.value
-    itens[id].salario = FSalario.value
+  if (itemId !== undefined) {
+    itemsList[itemId].nome = inputName.value
+    itemsList[itemId].funcao = inputFunction.value
+    itemsList[itemId].salario = inputSalary.value
   } else {
-    itens.push({'nome': FNome.value, 'funcao': FFuncao.value, 'salario': FSalario.value})
+    itemsList.push({ 'nome': inputName.value, 'funcao': inputFunction.value, 'salario': inputSalary.value })
   }
 
-  setItensBD()
+  updateItemList()
 
-  modal.classList.remove('active')
-  loadItens()
-  id = undefined
+  modalElement.classList.remove('active')
+  loadItems()
+  itemId = undefined
 }
 
-function loadItens() {
-  itens = getItensBD()
-  tbody.innerHTML = ''
-  itens.forEach((item, index) => {
-    insertItem(item, index)
+function loadItems() {
+  itemsList = getItemListFromLocalStorage()
+  tableBody.innerHTML = ''
+  itemsList.forEach((item, index) => {
+    createTableRow(item, index)
+  })
+  addEditAndDeleteListeners()
+}
+
+function addEditAndDeleteListeners() {
+  const editButtons = document.querySelectorAll('.edit-button')
+  const deleteButtons = document.querySelectorAll('.delete-button')
+
+  editButtons.forEach(button => {
+    button.addEventListener('click', () => editItem(parseInt(button.dataset.index)))
   })
 
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', () => deleteItem(parseInt(button.dataset.index)))
+  })
 }
 
-const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
-const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
+const getItemListFromLocalStorage = () => JSON.parse(localStorage.getItem('dbfunc')) || []
+const updateItemList = () => localStorage.setItem('dbfunc', JSON.stringify(itemsList))
 
-loadItens()
+loadItems()
